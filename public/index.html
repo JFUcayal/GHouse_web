@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Greenhouse App</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="#" />
+    
+</head>
+<body>
+
+    <div id="app-container">
+        <h2>🌿 Greenhouse App 🌿</h2>
+
+        <div id="login_sign_btn">
+            <button class="env_btn" onclick = "show_login_sign('login_box')"> Login </button>
+            <button class="env_btn" onclick = "show_login_sign('sign_up_box')"> Sign Up </button>
+        </div>
+        
+        <br>
+
+        <div id="login_box" class="login_sign">
+            <h3> LOGIN </h3>
+            <input type="text" id="login_user" placeholder="Enter Username" maxlength="20">
+            <input type="password" id="login_pass" placeholder="Enter Password" maxlength="20">
+            <button class="doorBtn" onclick="login()"> LOGIN </button>
+        </div>
+
+        <div id="sign_up_box" class="login_sign">
+            <h3> SIGN UP </h3>
+            <input type="text" id="sign_name" placeholder="Enter Name" maxlength="20">
+            <input type="text" id="sign_user" placeholder="Enter Username" maxlength="20">
+            <input type="password" id="sign_pass" placeholder="Enter Password" maxlength="20">
+            <button class="doorBtn" onclick="sign_up()"> SIGN UP </button>
+        </div>
+
+    </div>
+
+<script src="./client.js"></script>
+</body>
+</html> 

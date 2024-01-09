@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Greenhouse App</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="#" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="app-container">
+        <h2>🌿 Greenhouse App 🌿</h2>
+
+
+        <div class="selection_cointainer"> 
+
+            <div class="box_environment">
+                <!-- Conteúdo da primeira div -->
+                <button class="env_btn" onclick = "mostrarDiv('box_info_tropical')"> Tropical </button>
+                <button class="env_btn" onclick = "mostrarDiv('box_info_arid')"> Arid </button>
+                <button class="env_btn" onclick = "mostrarDiv('box_info_regular')"> Regular </button>
+                <button class="env_btn" onclick = "mostrarDiv('box_data')"> Custom </button>
+            </div>
+            
+
+            <!--PARAMETER TEXT-->
+            <div class="text_box">
+                <h6> Temperature: </h6>
+                <h6> Air Humidity: </h6>
+                <h6> Soil Humidity: </h6>
+                <h6> Lights: </h6>
+            </div>
+
+
+             <!--TROPICAL-->
+             <div id="box_info_tropical" class="selectDiv">
+                <h5> 25ºC </h5>
+                <h5> 70% </h5>
+                <h5> 70% </h5>
+
+                <label class="switch">
+                    <input type="checkbox" id="light_tropical">
+                    <span class="slider round"></span>
+                </label>
+
+                <!--Send Data-->
+                <br>
+                <button onclick="sendData_tropical()">OK</button>
+            </div>
+
+             <!--ARID-->
+             <div id="box_info_arid" class="selectDiv">
+                <h5> 25ºC </h5> 
+                <h5> 25% </h5>
+                <h5> 20% </h5>
+
+                <label class="switch">
+                    <input type="checkbox" id="light_arid">
+                    <span class="slider round"></span>
+                </label>
+
+                <!--Send Data-->
+                <br>
+                <button onclick="sendData_arid()">OK</button>
+            </div>
+
+            <!--REGULAR-->
+            <div id="box_info_regular" class="selectDiv">
+                <h5> 25ºC </h5> 
+                <h5> 50% </h5>
+                <h5> 50% </h5>
+
+                <label class="switch">
+                    <input type="checkbox" id="light_regular">
+                    <span class="slider round"></span>
+                </label>
+
+                <!--Send Data-->
+                <br>
+                <button onclick="sendData_regular()">OK</button>
+            </div>
+
+            <!--CUSTOM-->
+            <div id="box_data" class="selectDiv"> 
+         
+                    <input type="text" id="temp" placeholder="Enter Temperature" maxlength="5">         
+                    
+                    <input type="text" id="a_hum" placeholder="Enter Air Humidity" maxlength="5">
+                            
+                    <input type="text" id="s_hum" placeholder="Enter Soil Humidity" maxlength="5">
+                
+                    <label class="switch">
+                        <input type="checkbox" id="light_custom">
+                        <span class="slider round"></span>
+                    </label>
+
+                    <!--Send Data-->
+                    <br>
+                    <button onclick="sendCustomData()">OK</button>
+            </div>       
+            
+        </div>
+
+
+            <div id="warning">   
+                <h4> <i class="fa-solid fa-triangle-exclamation" id="icon"></i> Custom Values are not inside the range! </h4>
+            </div>
+            
+            <div id="check">   
+                <h4> <i class="fa-solid fa-check" id="icon2"></i> Define values updated! </h4>
+            </div>
+
+
+            <div id="optionsBtn">
+                <!--Open Security Door-->
+                <button class="doorBtn" onclick="open_door()" >Open Door</button>
+
+                <!--View Data-->
+                <button class="dataBtn" onclick="viewData()">View Data</button>
+            </div>
+
+            <!--GRAPHS -> VIEW DATA-->
+            <div id="graph_container">
+
+                <!--LIGHT-->
+                <div id="light_indicator_container">
+                    
+                    <div id="light_text">
+                        <h4>LIGHT STATE:</h4> 
+                    </div>
+       
+                    <!--IMPLEMENT JS FUNCTION TO GET LIGHT ON/OFF-->
+
+                        <div id="off_signal">
+                            <h3>OFF</h3>
+                        </div>
+                        
+                        <div id="on_signal">
+                            <h3>ON</h3>
+                        </div>
+                        
+                </div>
+
+                <!--WATER LEVEL-->
+                <div id="water_graph_container" > </div>                
+                <!--TEMPERATURE-->
+                <div id="temp_graph_container" > </div>
+                <!--AIR HUMIDITY-->
+                <div id="air_h_graph_container" > </div>
+                <!--SOIL HUMIDITY-->
+                <div id="soil_h_graph_container"> </div>
+            </div>
+          
+    </div>
+        
+    <script src="./client.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</body>
+</html>
