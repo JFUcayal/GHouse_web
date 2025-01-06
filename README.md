@@ -1,7 +1,7 @@
 # GHouse_web
 Node.js realtime server and client app for the control of an automated greenhouse prototype
 
-[Check out the document about the project!](docs/main.pdf)
+[Check out the project!](https://github.com/JFUcayal/GreenhousePI)
 
 <img src="docs/node1.png" alt="Greenhouse App - img1" width="1000">
 
