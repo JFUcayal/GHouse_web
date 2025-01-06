@@ -1,3 +1,4 @@
+# GHouse_web
 Node.js realtime server and client app for the control of an automated greenhouse prototype
 
 [Check out the document about the project!](docs/main.pdf)
